@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #23374d;
+  --secondary-color: #dad8d8;
+  --text-color: #5f6769;
+  --light: #dfcdc3;
+}
+
+html {
+  background-color: var(--secondary-color);
+  background-image: -webkit-linear-gradient(75deg, var(--primary-color) 50%, var(--secondary-color) 50%);
+  background-repeat: no-repeat;
+  height: auto;
+  min-height: 100vh;
+  font-family: 'Prompt', sans-serif;
+}
+
+h1 {
+  color: #fff;
+  padding: 10px;
+}
+
+.box {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-color);
+}
+
+input[type="checkbox"] {
+  margin: 15px;
+  transform: scale(1.6);
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #00204a;
+}
+
+form.item {
+  text-align: center;
+  margin-left: 20px;
+}
+
+button.submit {
+  min-height: 50px;
+  outline: none;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 35px;
+  padding-bottom: 6px;
+  border-width: 0;
+  cursor: pointer;
+}
+
+#addNew {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+  font-family: 'Prompt', sans-serif;
+}
+
+#addNew:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 var(--primary-color);
+}
+
+::placeholder {
+  color: var(--text-color);
+  opacity: 1;
+}
+
+footer {
+  color: var(--light);
+  text-align: center;
+  margin-top: 70px;
+}
+
+footer a {
+  color: var(--light);
+}
+
+/* for custom list design */
+.listChange {
+  text-align: center;
+  z-index: 2;
+  width: 50%;
+  padding: 2rem;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 20px;
+
+  font-family: 'Prompt', sans-serif;
+}
+
+.listChange input {
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 19px;
+  border: none;
+  background: transparent;
+  outline: none;
+
+}
+
+.listChange button {
+  padding: 0.5rem;
+  border-width: 0;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 1rem;
+  outline: none;
+  font-size: 16px;
+}
+
+.listChange input:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 var(--primary-color);
+}
+
+#open {
+  color: var(--light);
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}

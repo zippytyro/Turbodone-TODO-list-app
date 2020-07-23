@@ -1,0 +1,22 @@
+<%- include('partials/header'); %>
+<div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+</div>
+<div class="box">
+    <form class="item" action="/" method="POST">
+        <input maxlength="150" id="addNew" required autocomplete="off" autofocus type="text" name="newItem"
+            placeholder="Add new">
+        <button class="submit" name="list" value="<%= listTitle %>" name="shashwat" type="submit">+</button>
+    </form>
+
+    <% newListItems.forEach(function(item){ %>
+    <form action="/delete" method="POST">
+        <div class="item">
+            <input type="checkbox" value="<%= item._id %>" name="checkbox" onchange="this.form.submit()">
+            <p><%= item.name %></p>
+            <input type="hidden" name="listName" value="<%= listTitle %>">
+        </div>
+    </form>
+    <% }); %>
+</div>
+<%- include('partials/footer'); %>
