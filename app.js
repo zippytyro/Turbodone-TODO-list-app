@@ -69,8 +69,32 @@ app.get("/", function (req, res) {
         }
     });
 });
+// for creating custom dynamic lists.
+app.get("/list/:customListName", function (req, res) {
+    const customListName = _.capitalize(req.params.customListName);
 
-
+    List.findOne({
+        name: customListName
+    }, function (err, results) {
+        if (results) {
+            // showing existing list
+            res.render("list", {
+                listTitle: results.name,
+                newListItems: results.items
+            });
+        } else {
+            // creating a new list
+            const list = new List({
+                name: customListName,
+                items: defaultItems
+            });
+            // then saving the list
+            list.save();
+            // after that redirecting it to the custom route
+            res.redirect("/list/" + customListName);
+        }
+    });
+});
 // post request for home route.
 app.post("/", function (req, res) {
     // what user entered
@@ -130,32 +154,6 @@ app.post("/delete", function (req, res) {
 app.post("/listChange", function (req, res) {
     newListURL = req.body.newlist;
     res.redirect("/list/" + newListURL);
-
-    app.get("/list/:customListName", function (req, res) {
-        const customListName = _.capitalize(req.params.customListName);
-
-        List.findOne({
-            name: customListName
-        }, function (err, results) {
-            if (results) {
-                // showing existing list
-                res.render("list", {
-                    listTitle: results.name,
-                    newListItems: results.items
-                });
-            } else {
-                // creating a new list
-                const list = new List({
-                    name: customListName,
-                    items: defaultItems
-                });
-                // then saving the list
-                list.save();
-                // after that redirecting it to the custom route
-                res.redirect("/list/" + customListName);
-            }
-        });
-    });
 });
 // new list creation page.
 app.get("/new-list", function (req, res) {
