@@ -164,7 +164,8 @@ app.get("/new-list", function (req, res) {
 // about route
 app.get("/company/about", function (req, res) {
     res.render("about", {
-        listTitle: "About"
+        listTitle: "About",
+        listName: newListURL
     });
 });
 
