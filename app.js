@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 // =============== GLobal variables =============
-let newListURL;
+let newListURL, customListName;
 // ==================================
 // to serve static/media files.
 app.use(express.static("public"));
@@ -71,7 +71,7 @@ app.get("/", function (req, res) {
 });
 // for creating custom dynamic lists.
 app.get("/list/:customListName", function (req, res) {
-    const customListName = _.capitalize(req.params.customListName);
+    customListName = _.capitalize(req.params.customListName);
 
     List.findOne({
         name: customListName
@@ -165,7 +165,7 @@ app.get("/new-list", function (req, res) {
 app.get("/company/about", function (req, res) {
     res.render("about", {
         listTitle: "About",
-        listName: newListURL
+        listName: customListName
     });
 });
 
