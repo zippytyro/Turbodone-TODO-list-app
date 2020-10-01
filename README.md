@@ -1,4 +1,4 @@
-# Turbodone---TODO-list-app
+# Turbodone - A TODO list web app
 A simple, minimalist express based TODO list web application. Hosted on Heroku and database on MongoDB atlas.
 
 # Tech stack - 
