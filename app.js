@@ -1,11 +1,13 @@
 // jshint esversion: 6
 
-// requiring packages
+// required packages
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const dotenv = require("dotenv");
 day = date.getDate();
 const app = express();
 // using body-parser to get data from user input
@@ -20,11 +22,12 @@ app.use(express.static("public"));
 mongoose.set('useFindAndModify', false);
 
 // connecting to mongoose 
-mongoose.connect("mongodb+srv://shashwat-admin:shashwat8429@cluster0.jgdc3.mongodb.net/todolistappDB", {
+mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
+//================= for connecting locally =============
 // mongoose.connect("mongodb://localhost:27017/todolistDB", {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
