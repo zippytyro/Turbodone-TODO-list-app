@@ -27,7 +27,7 @@ mongoose.connect(process.env.DB_URL, {
     useUnifiedTopology: true
 });
 
-//================= for connecting locally =============
+//================= Use this to connect local mongoDB database using PORT - 27017 =============
 // mongoose.connect("mongodb://localhost:27017/todolistDB", {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true
