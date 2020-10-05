@@ -1,4 +1,3 @@
-// custom modules developed - Shashwat Verma
 // jshint esversion: 6
 module.exports.getDate = function () {
     const today = new Date();
@@ -16,4 +15,4 @@ module.exports.getDay = function () {
         weekday: "long"
     };
     return today.toLocaleDateString("en-US", options);
-};
+}; 
