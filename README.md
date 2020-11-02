@@ -15,4 +15,4 @@ By clicking on the checkbox mark the tasks that are completed. The completed tas
 
 You can also create custom lists by clicking on the '+' button on the bottom right corner of the webpage
 # Tech stack - 
-HTML5, CSS3. EJS, expressJS, nodeJS, mongodb, heroku, mongoose
+HTML5, CSS3. EJS, expressJS, nodeJS, mongodb cloud atlas, heroku, mongoose
